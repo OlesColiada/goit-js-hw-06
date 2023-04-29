@@ -12,3 +12,14 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+
+// main UL-element
+const mainUl = document.querySelector('.gallery')
+
+const preparedStructure = images.forEach(image => {
+  const strinfForInsert = (`<li><img src = ${image.url} alt = ${image.alt} width = 30% >`)
+  mainUl.insertAdjacentHTML("beforebegin", strinfForInsert)})
+
+const imageStyle = document.querySelectorAll('.gallery img')
+console.log(imageStyle)
