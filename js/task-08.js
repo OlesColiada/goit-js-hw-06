@@ -5,12 +5,12 @@ loginForm.addEventListener('submit', function callbackSubmit(event){
 
     const emailField = document.querySelector('input[type="email"]');
     const passwordField = document.querySelector('input[type="password"]');
-    let newUser = {};
     
-    if(emailField.value !== "" && passwordField.value !== ""){
-        newUser.email = loginForm.elements.email.value;
-        newUser.password = loginForm.elements.password.value}
-    else (alert("Fill all the forms please!!!"));
+    let newUser = {};
+    if(emailField.value === "" || passwordField.value === ""){return alert("Fill all the forms please!!!")}
+    
+    newUser.email = loginForm.elements.email.value;
+    newUser.password = loginForm.elements.password.value
     console.log(newUser);
     loginForm.reset()
 })

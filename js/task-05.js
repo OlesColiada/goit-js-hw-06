@@ -1,8 +1,11 @@
 //призначаємо константи
 const enteredText = document.querySelector('#name-input');
 const newTextOutput = document.querySelector('#name-output');
-newTextOutput.textContent = 'Anonymous';
 
-//ставимо слухача подій
-enteredText.addEventListener('input', (event) => {newTextOutput.textContent = event.currentTarget.value});
+//ставимо слухачів подій
+enteredText.addEventListener('input', function(){
+    newTextOutput.textContent.length === 0 ? newTextOutput.textContent = 'Anonymous' : newTextOutput.textContent =enteredText.value});
 
+enteredText.addEventListener('keyup', function(){
+    if(enteredText.value === '') {newTextOutput.textContent = 'Anonymous'}
+})  

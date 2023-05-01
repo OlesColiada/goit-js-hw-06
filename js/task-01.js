@@ -1,12 +1,17 @@
 
-const categoriesList = document.querySelectorAll('#categories .item');
+const categoriesList = document.body.firstElementChild.nextElementSibling.children
+console.log("Number of categories:" , categoriesList.length)
+console.log('')
 
-const categoriesItems = document.querySelectorAll('.item')
-console.log("Number of categories:" , categoriesItems.length)
-
-categoriesList.forEach(category => {
+const newArrayChildren = [...categoriesList]
+newArrayChildren.forEach(category => {
     const localTitle = category.querySelector('h2').textContent;
     const quantityOfLi = category.querySelectorAll('li').length;
-    console.log(localTitle);
-    console.log(quantityOfLi);
+    console.log('Category:', localTitle);
+    console.log('Elements:',quantityOfLi);
+    console.log('')
+
 })
+
+
+
